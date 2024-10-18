@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog - All Posts</title>
+</head>
+<body>
+    <h1>All Posts</h1>
+    <a href="{% url 'post_new' %}">Create New Post</a>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a> ({{ post.created_at }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
